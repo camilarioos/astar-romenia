@@ -4,6 +4,7 @@
 
  # ----- PASSO 1: importar os dados -----
 from mapa import mapa_romenia, heuristica_bucareste
+
 # ----- PASSO 2: função que devolve o custo de UMA estrada -----
 def custo_da_estrada(origem, destino):
     """Devolve os km da estrada origem -> destino, ou None se ela não existe."""
