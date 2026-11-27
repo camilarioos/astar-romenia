@@ -21,8 +21,8 @@ def expandir(no, explorados):
  for vizinho, custo_estrada in mapa_romenia[cidade_atual]:
   if vizinho in explorados:
    continue
- novo_g = g_atual + custo_estrada
- novo_f = novo_g + heuristica_bucareste[vizinho]
+ novo_g = g_atual + custo_estrada # Soma o custo da estrada ao custo já percorrido.
+ novo_f = novo_g + heuristica_bucareste[vizinho] # Soma o custo percorrido com a estimativa que falta.
  filhos.append((novo_f, novo_g, vizinho, caminho + [vizinho]))
  return filhos
 
@@ -43,3 +43,9 @@ for rodada in [1, 2, 3]:
  mostrar_fronteira(fronteira)
  print(' explorados:', sorted(explorados))
  print()
+
+# g = custo real acumulado desde a cidade inicial.
+# h = estimativa do custo que falta até Bucareste.
+# f = g + h (custo total estimado).
+# O A* escolhe explorar primeiro o nó com menor valor de f.
+
